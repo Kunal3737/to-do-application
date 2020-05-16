@@ -106,7 +106,15 @@ function App() {
   };
   const customStyles = {
     content: {
-      backgroundColor: "#ccc",
+      top: "50%",
+      left: "50%",
+      right: "auto",
+      bottom: "auto",
+      marginRight: "-50%",
+      transform: "translate(-50%, -50%)",
+      height: "400px",
+      width: "500px",
+      backfroundColor: "#ccc",
     },
   };
 
@@ -131,6 +139,7 @@ function App() {
             <div className="addedContent">{items.data}</div>
             <div className="addedContent">
               <button
+                className="adddelButton"
                 onClick={(e) => {
                   editHandler(e, items.id, items.data);
                 }}
@@ -139,6 +148,7 @@ function App() {
               </button>
               &nbsp;
               <button
+                className="adddelButton"
                 onClick={(e) => {
                   deleteHandler(e, items.id);
                 }}

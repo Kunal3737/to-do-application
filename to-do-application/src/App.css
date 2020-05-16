@@ -9,16 +9,17 @@ form {
 input {
   margin: 15px;
   width: 50%;
-  height: 25px;
+  height: 35px;
 }
 
 .content {
   /* border: 2px solid red; */
   border-radius: 5px;
   margin: 5px auto;
+  font-size: large;
   padding: 5px;
   width: 80%;
-  /* height: 20px; */
+  height: 30px;
   background-color: #fff;
   color: black;
 }
@@ -30,7 +31,7 @@ input {
 }
 
 .addButton {
-  height: 30px;
+  height: 40px;
   width: 50px;
 }
 
@@ -44,6 +45,27 @@ input {
 
 .header {
   background-color: red;
+  height: 40px;
+  font-weight: 700;
+  align-items: center;
+  display: flex;
+  justify-content: center;
   padding: 5px;
   color: white;
+}
+
+.adddelButton {
+  height: 30px;
+  width: 40px;
+}
+
+.addModal {
+  height: 30px;
+  width: 60px;
+  margin-right: 10px;
+}
+
+.closeModal {
+  height: 30px;
+  width: 60px;
 }
