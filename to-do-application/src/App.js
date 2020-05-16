@@ -14,13 +14,11 @@ function App() {
   const [update, setUpdate] = useState(false);
   const [editingModalInput, setEditingModalInput] = useState();
   const [currentId, setCurrentId] = useState("");
-  console.log(allData);
 
   useEffect(() => {
     axios
       .get(`https://to-do-application-348bd.firebaseio.com/.json`)
       .then((response) => {
-        console.log(response.data);
         const fetchedResult = [];
         for (let key in response.data) {
           fetchedResult.push({
@@ -40,7 +38,6 @@ function App() {
     axios
       .get(`https://to-do-application-348bd.firebaseio.com/.json`)
       .then((response) => {
-        console.log(response.data);
         const fetchedResult = [];
         for (let key in response.data) {
           fetchedResult.push({
@@ -62,7 +59,6 @@ function App() {
     axios
       .post(`https://to-do-application-348bd.firebaseio.com/.json`, { data })
       .then((response) => {
-        console.log(response.data);
         setUpdateValue(true);
       })
       .catch((error) => {
@@ -72,7 +68,6 @@ function App() {
 
   const inputHandler = (e) => {
     setInputValue(e.target.value);
-    console.log(inputValue);
   };
 
   const editHandler = (e, id, data) => {
@@ -85,7 +80,6 @@ function App() {
     axios
       .delete(`https://to-do-application-348bd.firebaseio.com/${id}.json`)
       .then((response) => {
-        console.log(response.data);
         setUpdateValue(true);
       })
       .catch((error) => {
@@ -96,16 +90,12 @@ function App() {
   const editNote = (e, id, data) => {
     if (editingModalInput !== "") {
       const dat = data;
-      alert(e.target);
-      alert(dat);
-      alert(currentId);
       axios
         .put(
           `https://to-do-application-348bd.firebaseio.com/${currentId}/.json`,
           { data: dat }
         )
         .then((response) => {
-          console.log(response.data);
           setUpdateValue(true);
         })
         .catch((error) => {
